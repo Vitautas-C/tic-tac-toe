@@ -1,0 +1,151 @@
+.tic-tac-toe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 493px;
+    gap: 17px;
+}
+
+.info {
+    text-align: center;
+}
+
+.info:not(.active) {
+    visibility: hidden;
+}
+
+.game-board {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 375px;
+    height: 375px;
+}
+
+.cell {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 33.3%;
+    height: 33.3%;
+}
+
+.zero::before {
+    position: absolute;
+    top: 10%;
+    left: 12.5%;
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    border: 8.656px solid blue;
+    width: 75%;
+    height: 80%;
+    border-radius: 50%;
+}
+
+.cross::before,
+.cross::after {
+    position: absolute;
+    top: 46.5%;
+    left: 0;
+    transform: rotate(45deg);
+    content: "";
+    display: block;
+    width: 100%;
+    height: 8.656px;
+    background-color: red;
+}
+
+.cross::after {
+    transform: rotate(-45deg);
+}
+
+.next {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    opacity: 0.1;
+}
+
+.lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 375px;
+    height: 375px;
+}
+
+.line {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2.885px;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.line:not(.active) {
+    display: none;
+}
+
+
+.vertical {
+    transform: rotate(90deg);
+    top: 50%;
+}
+
+.diagonal {
+    top: 50%;
+    left: -20%;
+    width: 140%;
+}
+
+.horizon:nth-child(1) {
+    top: 16.5%;
+}
+
+.horizon:nth-child(2) {
+    top: 50%;
+}
+
+.horizon:nth-child(3) {
+    top: 83.5%;
+}
+
+.vertical:nth-child(4) {
+    left: -33.3%;
+}
+
+.vertical:nth-child(5) {
+    left: 0%;
+}
+
+.vertical:nth-child(6) {
+    left: 32.7%;
+}
+
+.diagonal:nth-child(7) {
+    transform: rotate(45deg);
+}
+
+.diagonal:nth-child(8) {
+    transform: rotate(-45deg);
+}
